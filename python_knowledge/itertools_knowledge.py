@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 
-from itertools import count
-from itertools import cycle
-from itertools import repeat
-
 #无限循环
 #从5开始的整数循环器，每次增加2，即5, 7, 9, 11, 13, 15 ...
 """
@@ -14,6 +10,7 @@ def count(start=0, step=1):
 		n += start
 
 """
+from itertools import count
 print (next(count(5,2)))
 
 #重复序列的元素，既a, b, c, a, b, c ...
@@ -27,6 +24,7 @@ def cycle(iterable):
 		for element in saved:
 			yield element
 """
+from itertools import cycle
 print (next(cycle('abc')))
 
 #重复
@@ -39,6 +37,7 @@ def repeat(obj, times=None):
 		for i range(times):
 			yield obj
 """
+from itertools import repeat
 print (next(repeat(1.2)))
 
 #重复10，共重复5次
@@ -70,24 +69,11 @@ from itertools import accumulate
 from operator import sub
 a = accumulate([1,2,3,4,5])
 a = accumulate([1,2,3,4,5], sub)
-print(list(a))
+print(list(a)) #->[1, -1, -4, -8, -13]
 
-
-
-
-
-
-
-
-
-
-
-
-
-from itertools import starmap
 
 #依次将 序列中的值传递给pow函数（多次调用一个函数）
-
+from itertools import starmap
 """
 def starmap(function, iterable):
 	for args in iterable:
@@ -107,7 +93,7 @@ def chain(*iterables):
 """
 from itertools import chain
 c = chain([1,2,3], "abc", "def")
-print (list(c))
+print (list(c)) #[1, 2, 3, 'a', 'b', 'c', 'd', 'e', 'f']
 
 # 从一个列表中获取
 """
